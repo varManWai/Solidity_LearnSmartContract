@@ -7,19 +7,21 @@ const { beforeEach } = require("mocha");
 const Web3 = require("web3"); //Web3 need to use capital letter because it is a "constructor"
 const web3 = new Web3(ganache.provider()); //it is lower case because it is an instance // ganache.provider() is to tell the hosting network we used in the machine
 
-beforeEach(() => {
+let accounts;
+
+beforeEach(async () => {
   // Get a list of all account
-  web3.eth.getAccounts().then((fetchedAccounts) => {
-    console.log(fetchedAccounts);
-  }); // must be an async
+  accounts = await web3.eth.getAccounts(); // must be async
 
   // Use one of those accounts to deploy
   // the contract
+
+
 });
 
 describe("Inbox", () => {
   it("deploys a contract", () => {
-    
+    console.log(accounts);
   });
 });
 
