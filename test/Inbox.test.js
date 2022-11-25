@@ -1,6 +1,8 @@
 // contract test code will go here
 
-//functional test
+// setup 
+
+// import 
 const assert = require("assert");
 const ganache = require("ganache-cli");
 const { beforeEach } = require("mocha");
