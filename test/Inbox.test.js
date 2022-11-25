@@ -31,6 +31,12 @@ describe("Inbox", () => {
     const message = await inbox.methods.message().call();
     assert.equal(message, "Hi there!");
   });
+
+  it("can change the message", async () => {
+    await inbox.methods.setMessage("Bye there!").send({from: accounts[0]}); //front account 0 send the gas to complete the setting
+    const message = await inbox.methods.message().call();
+    assert.equal(message, "Bye there!");
+  });
 });
 
 // class Car {
