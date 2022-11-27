@@ -30,7 +30,7 @@ describe("Inbox", () => {
   });
 
   it("has default message", async () => {
-    const message = await inbox.methods.message().call();
+    const message = await inbox.methods.message().call(); // .call() is only for read only function, but it has a a changes we need to use the send();
     assert.equal(message, "Hi there!");
   });
 
